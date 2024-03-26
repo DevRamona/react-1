@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDom from "react-dom/client";
+
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const BookList = () => {
+    return (
+    <section className = "booklist">
+        <Book/>
+        <Book/>
+        <Book/>
+        <Book/>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    </section>
+    );
+};
+
+const author = "Dav Pilkey";
+const Book = () => {
+  const title = "Dog Man:The Scarlet Shedder";
+    return (
+      <article className="book ">
+        <img
+    src="https://m.media-amazon.com/images/I/51o1ZxqOQUL._SY445_SX342_.jpg"
+    alt="Dog Man:The Scarlet Shedder"
+  />
+  <h2>{title}</h2>
+  <h4>{author}</h4>
+
+
+      </article>
+    );
+};
+
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(<BookList/>);
